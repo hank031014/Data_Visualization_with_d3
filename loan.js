@@ -103,17 +103,23 @@ $(function(){
 		g.append("g")
 		.attr("class", "axis axis--x")
 		.attr("transform", "translate(0," + height + ")")
-		.call(d3.axisBottom(x));
+		.call(d3.axisBottom(x))
+		.append("text")
+		.attr("x", 840)
+		.attr("dx", "0.71em")
+		.attr("fill", "#000")
+		.text("民國(年)");
 
 		g.append("g")
 		.attr("class", "axis axis--y")
 		.call(d3.axisLeft(y))
 		.append("text")
-		.attr("transform", "rotate(-90)")
-		.attr("y", 6)
+		//.attr("transform", "rotate(-90)")
+		.attr("x", 15)
+		.attr("y", -10)
 		.attr("dy", "0.71em")
 		.attr("fill", "#000")
-		.text("總負債, 百萬元");
+		.text("總負債(百萬元)");
 		
 		 var clgoverns = g.selectAll(".city")
 			.data(clgovern)
@@ -181,17 +187,23 @@ $(function(){
 		g2.append("g")
 		.attr("class", "axis axis--x")
 		.attr("transform", "translate(0," + height + ")")
-		.call(d3.axisBottom(x2));
-
+		.call(d3.axisBottom(x2))
+		.append("text")
+		.attr("x", 840)
+		.attr("dx", "0.71em")
+		.attr("fill", "#000")
+		.text("民國(年)");
+		
 		g2.append("g")
 		.attr("class", "axis_axis_y_2")
 		.call(d3.axisLeft(y2))
 		.append("text")
-		.attr("transform", "rotate(-90)")
-		.attr("y", 6)
+		//.attr("transform", "rotate(-90)")
+		.attr("x", 15)
+		.attr("y", -12)
 		.attr("dy", "0.71em")
 		.attr("fill", "#000")
-		.text("總負債, 百萬元");
+		.text("總負債(百萬元)");
 		
 		 var lkgoverns = g2.selectAll(".local")
 			.data(lkgovern)
